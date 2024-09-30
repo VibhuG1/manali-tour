@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Manali Like Never Before</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #008080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .category-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            background-color: #008080;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #20b2aa;
+            color: white;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-content {
+            display: none;
+            padding: 15px;
+            background-color: #f0f8ff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .section-content p {
+            margin: 5px 0;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #008080;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #20b2aa;
+        }
+
+        .food-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .food-list li {
+            padding: 8px 0;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #008080;
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .favorites {
+            position: fixed;
+            top: 50px;
+            right: 20px;
+            background-color: #ffffff;
+            border: 1px solid #008080;
+            border-radius: 5px;
+            padding: 10px;
+            width: 200px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .favorite-item {
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .favorite-item:last-child {
+            border-bottom: none;
+        }
+
+        .show-favorites-btn {
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        .section-title:hover {
+            background-color: #3cb371;
+        }
+
+        .icon {
+            margin-right: 10px;
+        }
+
+        .explore-btn {
+            font-size: 0.9em;
+            background-color: #ff4500;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Explore Manali Like Never Before</h1>
+        <p>Discover hidden gems and unique experiences tailored just for you.</p>
+    </header>
+
+    <!-- Adventure & Nature Category -->
+    <section>
+        <div class="category-title">🌲 Adventure & Nature</div>
+
+        <div class="section-title" onclick="toggleSection('jogni')">
+            <span><i class="icon">🏞️</i> Jogni Falls Hike</span> <button class="explore-btn" onclick="addToFavorites('Jogni Falls Hike')">Add to Favorites</button>
+        </div>
+        <div class="section-content" id="jogni">
+            <p>Take a one-hour hike to the majestic Jogni Falls, cascading from 150 feet. Relax by the pool and enjoy breathtaking views.</p>
+        </div>
+
+        <div class="section-title" onclick="toggleSection('solang')">
+            <span><i class="icon">🚗</i> Solang Valley - Atal Tunnel - Sissu</span> <button class="explore-btn" onclick="addToFavorites('Solang Valley - Atal Tunnel - Sissu')">Add to Favorites</button>
+        </div>
+        <div class="section-content" id="solang">
+            <p>Visit Solang Valley and cross the Atal Tunnel to explore the scenic beauty of Sissu and Rohtang Pass. Enjoy a picturesque lunch at Sissu.</p>
+        </div>
+
+        <div class="section-title" onclick="toggleSection('soil')">
+            <span><i class="icon">🌿</i> Soil Village & Clear Water Stream</span> <button class="explore-btn" onclick="addToFavorites('Soil Village & Clear Water Stream')">Add to Favorites</button>
+        </div>
+        <div class="section-content" id="soil">
+            <p>Wander through Soil Village, surrounded by lush forests. Stand on a wooden bridge over a crystal-clear stream and unwind in the serene atmosphere.</p>
+        </div>
+
+    </section>
+
+    <!-- Food & Relaxation Category -->
+    <section>
+        <div class="category-title">🍽️ Food & Relaxation</div>
+
+        <div class="section-title" onclick="toggleSection('picnic')">
+            <span><i class="icon">🧺</i> Unique Picnic Experience</span> <button class="explore-btn" onclick="addToFavorites('Unique Picnic Experience')">Add to Favorites</button>
+        </div>
+        <div class="section-content" id="picnic">
+            <p>Experience an unforgettable picnic in the lush green surroundings of Manali with panoramic views and handpicked delicacies. A serene escape in nature!</p>
+        </div>
+
+        <div class="section-title" onclick="toggleSection('food')">
+            <span><i class="icon">🍜</i> Must-Try Food in Manali</span> <button class="explore-btn" onclick="addToFavorites('Must-Try Food in Manali')">Add to Favorites</button>
+        </div>
+        <div class="section-content" id="food">
+            <ul class="food-list">
+                <li>🍛 Maniram Ka Dhaba: Siddu, Red rice, rajma near Jana Falls</li>
+                <li>🍜 Green Forest Café: Fried momos, Tupka near Hadimba Temple</li>
+                <li>🥟 Kyaroo: Tibetan cuisine in Bahang</li>
+                <li>🍕 Valentinos: Continental & Italian food with views in Jagatsukh</li>
+                <li>☕ Dana Coffee House: Coffee and English breakfast on Mall Road</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- Unique Experiences Category -->
+    <section>
+        <div class="category-title">💎 Unique Experiences</div>
+
+        <div class="section-title" onclick="toggleSection('sajla')">
+            <span><i class="icon">💧</i> Sajla Waterfall & Village</span> <button class="explore-btn" onclick="addToFavorites('Sajla Waterfall & Village')">Add to Favorites</button>
+        </div>
+        <div class="section-content" id="sajla">
+            <p>Discover the hidden Sajla Waterfall with its crystal-clear water and peaceful surroundings. Enjoy a snack by the waterfall at a local café.</p>
+        </div>
+
+        <div class="section-title" onclick="toggleSection('jispa')">
+            <span><i class="icon">🚗</i> Solang Valley - Sissu - Jispa - Deepak Taal</span> <button class="explore-btn" onclick="addToFavorites('Solang Valley - Sissu - Jispa')">Add to Favorites</button>
+        </div>
+        <div class="section-content" id="jispa">
+            <p>Enjoy a scenic road trip from Solang to Jispa, stopping by picturesque villages and Deepak Taal lake. Perfect for nature lovers!</p>
+        </div>
+
+    </section>
+
+    <!-- Favorites Section (Interactive) -->
+    <div class="favorites" id="favorites">
+        <h4>Your Favorite Experiences</h4>
+        <div id="favorite-list"></div>
+    </div>
+    <button class="show-favorites-btn" onclick="toggleFavorites()">Show Favorites</button>
+
+    <footer>
+        <p>Enjoy your Manali adventure!</p>
+        <button class="btn" onclick="alert('Bonfire Barbecue Experience Booked!')">Book Bonfire & Barbecue</button>
+    </footer>
+
+    <script>
+        // Toggle Section Visibility
+        function toggleSection(sectionId) {
+            var content = document.getElementById(sectionId);
+            content.style.display = (content.style.display === "block") ? "none" : "block";
+        }
+
+        // Add to Favorites
+        function addToFavorites(sectionName) {
+            var favoriteList = document.getElementById('favorite-list');
+            var newItem = document.createElement('div');
+            newItem.classList.add('favorite-item');
+            newItem.innerText = sectionName;
+            favoriteList.appendChild(newItem);
+        }
+
+        // Toggle Favorites Panel
+        function toggleFavorites() {
+            var favorites = document.getElementById('favorites');
+            favorites.style.display = (favorites.style.display === "block") ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
